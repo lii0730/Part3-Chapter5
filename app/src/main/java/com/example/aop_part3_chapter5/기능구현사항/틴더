@@ -1,0 +1,10 @@
+Firebase Authentication 사용하기
+- Email Login
+- Facebook Login
+
+Firebase Realtime Database 사용하기
+- yuyakaido/CardStackView 사용하기 -> Swipe animation open source library
+
+Firebase Authentication을 통해 이메일 로그인과 페이스북 로그인을 할 수 있다.
+Firebase RealTime Database를 이용하여 기록을 저장하고, 불러올 수 있다.
+Github에서 OpenSource Library를 찾아 사용할 수 있다.
