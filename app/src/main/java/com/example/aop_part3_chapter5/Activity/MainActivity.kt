@@ -1,8 +1,9 @@
-package com.example.aop_part3_chapter5
+package com.example.aop_part3_chapter5.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.aop_part3_chapter5.R
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         } else {
             startActivity(Intent(this, LikeActivity::class.java))
+            finish()
         }
     }
 }

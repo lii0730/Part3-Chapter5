@@ -1,13 +1,13 @@
-package com.example.aop_part3_chapter5
+package com.example.aop_part3_chapter5.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.aop_part3_chapter5.R
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
@@ -66,7 +66,6 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         handleSuccessLogin()
                     } else {
-
                         Toast.makeText(
                             this,
                             "로그인에 실패했습니다. 이메일 또는 비밀번호를 확인해주세요.",
@@ -85,14 +84,12 @@ class LoginActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, OnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Log.e("SignUpButtonStateTrue::", "${task.isSuccessful}")
                         Toast.makeText(
                             this,
                             "회원가입에 성공하였습니다. 로그인 버튼을 눌러 로그인 해주세요.",
                             Toast.LENGTH_SHORT
                         ).show()
                     } else {
-                        Log.e("SignUpButtonStateFalse:", "${task.exception}")
                         Toast.makeText(
                             this,
                             "이미 가입한 이메일이거나, 회원가입에 실패하였습니다",
@@ -158,6 +155,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handleSuccessLogin() {
         if(auth.currentUser == null) {
+            //TODO: 맨 처음에 회원가입 안하고 로그인 한 경우
             Toast.makeText(this, "로그인에 실패하였습니다", Toast.LENGTH_SHORT).show()
             return
         }
