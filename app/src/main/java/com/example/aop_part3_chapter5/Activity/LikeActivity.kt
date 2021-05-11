@@ -13,6 +13,7 @@ import com.example.aop_part3_chapter5.Adapter.CardItemAdapter
 import com.example.aop_part3_chapter5.DBKey.Companion.DIS_LIKE
 import com.example.aop_part3_chapter5.DBKey.Companion.LIKE
 import com.example.aop_part3_chapter5.DBKey.Companion.LIKED_BY
+import com.example.aop_part3_chapter5.DBKey.Companion.MATCH
 import com.example.aop_part3_chapter5.DBKey.Companion.NAME
 import com.example.aop_part3_chapter5.DBKey.Companion.USERS
 import com.example.aop_part3_chapter5.DBKey.Companion.USER_ID
@@ -195,13 +196,13 @@ class LikeActivity : AppCompatActivity(), CardStackListener {
                 if(snapshot.value == true) {
                     userDB.child(getCurrentUserID())
                         .child(LIKED_BY)
-                        .child("match")
+                        .child(MATCH)
                         .child(otherUserId)
                         .setValue(true)
 
                     userDB.child(otherUserId)
                         .child(LIKED_BY)
-                        .child("match")
+                        .child(MATCH)
                         .child(getCurrentUserID())
                         .setValue(true)
                 }

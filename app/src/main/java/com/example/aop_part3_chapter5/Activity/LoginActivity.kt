@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import com.example.aop_part3_chapter5.DBKey.Companion.USERS
 import com.example.aop_part3_chapter5.R
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -160,7 +161,7 @@ class LoginActivity : AppCompatActivity() {
             return
         }
         val userId = auth.currentUser?.uid.orEmpty()
-        val currentUserDB = Firebase.database.reference.child("Users").child(userId)
+        val currentUserDB = Firebase.database.reference.child(USERS).child(userId)
         val user = mutableMapOf<String, Any>()
         user["userId"] = userId
         currentUserDB.updateChildren(user)
